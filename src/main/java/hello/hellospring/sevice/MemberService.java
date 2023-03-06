@@ -9,8 +9,11 @@ import java.util.Optional;
 
 public class MemberService {
 // CTL + SHIFT + T 하면 테스트 폴더를 자동으로 만들수 있다
-    private final MemberRepository memberRepository= new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
 
+    public MemberService(MemberRepository memberRepository){
+        this.memberRepository = memberRepository;
+    }
     /*회원가입*/
     public Long join(Member member){
 //        같은 이름이 있는 중복 회원은 안된다
